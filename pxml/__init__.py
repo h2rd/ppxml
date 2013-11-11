@@ -28,7 +28,11 @@ def color_code(code):
 
 def main():
   data = sys.stdin.read()
-  data = color_code(format_code(data))
+  if sys.stdout.isatty():
+    try:
+      data = color_code(format_code(data))
+    except ValueError as e:
+      print e
 
   return data
 
