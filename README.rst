@@ -6,7 +6,7 @@ Command-line tool to validate and pretty-print XML.
 Setup
 -----
 
-Install throught git:
+Install throught git::
 
     pip install git+https://github.com/h2rd/pxml
     
