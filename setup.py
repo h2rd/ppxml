@@ -18,6 +18,7 @@ setup(
     },
     install_requires=[
         'Pygments==1.6',
-        'lxml==3.2.5'
+        'lxml==3.2.5',
+        'chardet'
     ]
 )
