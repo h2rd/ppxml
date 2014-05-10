@@ -7,6 +7,11 @@ Setup
 -----
 
     pip install git+https://github.com/h2rd/pxml
+    or without cache
+    cd /tmp
+    git clone https://github.com/h2rd/pxml
+    cd pxml
+    python setup.py install
 
 Examples
 --------
