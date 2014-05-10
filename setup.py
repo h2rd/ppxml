@@ -17,8 +17,8 @@ setup(
         'console_scripts': ['pxml = pxml:main']
     },
     install_requires=[
-        'Pygments==1.6',
-        'lxml==3.2.5',
+        'Pygments',
+        'lxml',
         'chardet'
     ]
 )
