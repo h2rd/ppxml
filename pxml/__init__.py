@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # unicode: utf-8
 
+from __future__ import print_function
 import sys
 import argparse
 
+from lxml import etree
 from pygments import highlight
 from pygments.formatters import TerminalFormatter
 from pygments.lexers import XmlLexer
-
-from lxml import etree
 import chardet
 
 
@@ -33,17 +33,20 @@ def get_xml(xml, xpath=None):
 
 def main():
     parser = argparse.ArgumentParser(description="Command-line tool to pretty-print XML with xpath")
-    parser.add_argument("--xpath", help="Use xpath")
+    parser.add_argument("-x", '--xpath', help="Use xpath", default="")
     args = parser.parse_args()
 
+    if sys.stdin.isatty():
+        return 'Please use stdin'
+
     data = sys.stdin.read()
-    if sys.stdout.isatty():
-        try:
-            data = color_code(format_code(get_xml(data, args.xpath)))
-        except ValueError as e:
-            print e
+    try:
+        data = color_code(format_code(get_xml(data, args.xpath)))
+    except ValueError as e:
+        print(e)
 
     return data or ''
 
+
 if __name__ == '__main__':
-    print main()
+    print(main())
