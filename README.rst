@@ -6,28 +6,37 @@ Command-line tool to validate and pretty-print XML.
 Setup
 -----
 
-Install throught git:: python
+.. code-block:: bash
 
-    pip install git+https://github.com/h2rd/ppxml
+  # Install throught git
+  pip install ppxml
 
-or without cache:: python
+  # Install through git
+  pip install git+https://github.com/h2rd/ppxml
 
-    cd /tmp
-    git clone https://github.com/h2rd/ppxml
-    cd ppxml
-    python setup.py install
+  # or without cache
+  cd /tmp
+  git clone https://github.com/h2rd/ppxml
+  cd ppxml
+  python setup.py install
 
 Examples
 --------
 
-Just prettify and colorize xml code:: bash
+Just prettify and colorize xml code:
+
+.. code-block:: bash
 
     curl http://feeds.bbci.co.uk/news/rss.xml | ppxml
 
-Use xpath for get some elements:: bash
+Use xpath for get some elements:
+
+.. code-block:: bash
 
     curl http://feeds.bbci.co.uk/news/rss.xml | ppxml -x "//item"
 
-Use xpath for get deeper elements:: bash
+Use xpath for get deeper elements:
+
+.. code-block:: bash
 
     curl http://feeds.bbci.co.uk/news/rss.xml | ppxml -x "//item/title"
