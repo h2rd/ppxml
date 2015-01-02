@@ -8,7 +8,7 @@ Setup
 
 .. code-block:: bash
 
-  # Install throught git
+  # Install through pip
   pip install ppxml
 
   # Install through git
